@@ -8,18 +8,21 @@ class Solution:
         smallest = prices[0]
         #initialize profit to 0
         profit = 0
+        # ans[0] will have the day when we should buy and ans[1] will have day when we can sell
         ans = [1, 1]
 
         for i in range(1, len(prices)):
             #if the current price is more than smallest, find profit
             if prices[i] > smallest:
-                #calculate max profit
+                #if current profit is greater than max profit then change it
                 if prices[i] - smallest > profit:
                     profit = prices[i] - smallest
+                    #update selling day
                     ans[1] = i+1
-            #update the smallest element found so far
+            #update the smallest price found so far
             if prices[i] < smallest:
                 smallest = prices[i]
+                #update buying day
                 ans[0] = i+1
         #ultimately return the profit
 
