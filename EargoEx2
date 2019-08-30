@@ -1,0 +1,12 @@
+select 'Home_Page' as page, sum(HOME_PAGE) as count from eargo Union
+all select 'Produt_Page' as page, sum(Produt_Page) as count from eargo union
+all select 'Warranty_Page' as page, sum(Warranty_Page) as count from eargo;
+
+
++---------------+-------+
+| page          | count |
++---------------+-------+
+| Home_Page     |     4 |
+| Produt_Page   |     4 |
+| Warranty_Page |     4 |
++---------------+-------+
